@@ -26,8 +26,8 @@
       <form class="flex login">
         <div class="flex center login_entry">
           <h2 class="flex logo_title">Вход</h2>
-          <input class="flex login_input" id="first" placeholder="Email">
-          <input class="flex login_input" placeholder="Пароль">
+          <input type="text" class="flex login_input" name="email" id="email" formControlName="email" class="form-control" placeholder="Login" required>
+          <input type="password" class="flex login_input" name="password" id="password" formControlName="password" class="form-control" placeholder="Пароль" required>
           <button class="flex center login_button">Войти</button>
         </div>
       </form>
