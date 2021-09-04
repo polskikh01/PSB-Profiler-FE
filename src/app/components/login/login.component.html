@@ -26,7 +26,7 @@
       <form [formGroup]="formLogin" (ngSubmit)="auth()" method="POST" class="flex login1">
         <div class="flex center login_entry">
           <h2 class="flex logo_title">Вход</h2>
-          <input type="text" class="flex login_input" name="login" id="login" formControlName="Логин" placeholder="Логин" required>
+          <input type="text" class="flex login_input" name="login" id="login" formControlName="login" placeholder="Логин" required>
           <input type="password" class="flex login_input" name="password" id="password" formControlName="password" placeholder="Пароль" required>
           <button type="submit" class="flex center login_button">Войти</button>
         </div>
