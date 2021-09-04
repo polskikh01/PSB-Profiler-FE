@@ -1,0 +1,81 @@
+<html>
+<body>
+<!--<div id="content">-->
+<!--  <a style="display: {{isAuth ? 'unset' : 'none'}}" id="logout" href="#" (click)="logout()"><h3>Logout</h3></a>-->
+<!--  <div id="leftBlock">-->
+<!--    <h1>ПСБ-Профайлер</h1>-->
+<!--    <hr>-->
+<!--    <p>ПСБ-Профайлер - веб-приложение, позволяющее распознавать документы по установленным признакам и классифицировать-->
+<!--      их в Клиентском досье. </p>-->
+<!--  </div>-->
+<!--  <div id="rightBlock">-->
+<!--    <button style="display: {{isAuth ? 'none' : 'unset'}}" onclick="location.href = '/login'">Авторизоваться</button>-->
+<!--    <button style="display: {{isAuth ? 'none' : 'unset'}}" onclick="location.href = '/registration'">-&#45;&#45;&#45;&#45;</button>-->
+<!--    <button style="display: {{isAuth ? 'unset' : 'none'}}" (click)="myProfile()">Мой профиль</button>-->
+<!--  </div>-->
+<!--</div>-->
+<header class="flex header_landing" id="head">
+  <h1 class="header_logo">ПСБ-Профайлер</h1>
+</header>
+<section class="flex center landing_profiler">
+  <img src="../../../assets/images/logo-landing.png" alt="Logo landing">
+  <span class="flex center landing_profiler_span">ПСБ-Профайлер - веб-приложение, позволяющее распознавать документы по установленным признакам и классифицировать их в Клиентском досье.</span>
+  <div class="flex center landing_icon">
+    <a href="#head"><img class="landing_icon_img" src="../../../assets/images/documents-icon.png"
+                              alt="Documents icon"></a>
+    <a onclick="location.href = '/login'" class="flex center landing_cabinet">
+      <img class="landing_icon_img" src="../../../assets/images/icon-user.png" alt="User icon">
+      <span>Личный кабинет</span>
+    </a>
+    <a href="#analitics"><img class="landing_icon_img" src="../../../assets/images/analitics-icon.png" alt="Analitics icon"></a>
+  </div>
+</section>
+<section class="flex landing_benefits">
+  <span class="landing_benefits_text">Наши преимущества:</span>
+  <ul class="landing_benefits_ul">
+    <li class="list">При формировании клиентского досье больше не нужно выполнять большое число ручных операций</li>
+    <li class="list">Уменьшается срок предоставления продуктов и услуг Клиентам Банка из-за сокращения срока проверки
+      документов и формирования клиентского досье
+    </li>
+    <li class="list">Больше никаких ошибок и неполного клиентского досье</li>
+    <li class="list">Никакого дублирования клиентских досье</li>
+  </ul>
+</section>
+<!--<section class="flex landing_list_roster" id="documents">-->
+<!--  <div class="flex landing_list_document">-->
+<!--    <span>Список эл.досье</span>-->
+<!--    <ul class="flex landing_list_document_ul">-->
+<!--      <li class="flex center landing_list_document_li">Текст</li>-->
+<!--      <li class="flex center landing_list_document_li"></li>-->
+<!--      <li class="flex center landing_list_document_li"></li>-->
+<!--      <li class="flex center landing_list_document_li"></li>-->
+<!--      <li class="flex center landing_list_document_li"></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--  <div class="flex landing_list_document">-->
+<!--    <span>Список документов</span>-->
+<!--    <ul class="flex landing_list_document_ul">-->
+<!--      <li class="flex center landing_list_document_li">Текст</li>-->
+<!--      <li class="flex center landing_list_document_li"></li>-->
+<!--      <li class="flex center landing_list_document_li"></li>-->
+<!--      <li class="flex center landing_list_document_li"></li>-->
+<!--      <li class="flex center landing_list_document_li"></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</section>-->
+<!--<canvas id="pie" class="chart chart-pie"-->
+<!--        chart-data="data" chart-labels="labels" chart-options="options">-->
+<!--</canvas>-->
+<section class="flex chart" id="analitics">
+  <app-chart></app-chart>
+<!--  <ul class="landing_benefits_ul chart_ul">-->
+<!--    <li class="list" style="list-style: none" id="chart_red">1</li>-->
+<!--    <li class="list">2</li>-->
+<!--    <li class="list">3</li>-->
+<!--  </ul>-->
+</section>
+<!--<section class="flex landing_analytics" id="analitics">-->
+<!--  <img src="../../../assets/images/diagram.png" alt="Analitics">-->
+<!--</section>-->
+</body>
+</html>
