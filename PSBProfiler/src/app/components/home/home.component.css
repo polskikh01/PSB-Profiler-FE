@@ -125,3 +125,19 @@
   flex-direction: row;
   background-color: #454553;
 }
+
+.chart {
+  height: 550px;
+  background-color: #454553;
+  align-items: center;
+  padding-left: 154px;
+}
+
+.chart_ul {
+  margin-left: 100px;
+}
+
+#chart_red::before {
+  content: "█";
+  color: red;
+}

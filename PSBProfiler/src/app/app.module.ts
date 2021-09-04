@@ -10,6 +10,8 @@ import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/h
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AccesserrorComponent } from './components/accesserror/accesserror.component';
+import { NgChartsModule } from 'ng2-charts';
+import { ChartComponent } from './components/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { AccesserrorComponent } from './components/accesserror/accesserror.compo
     LoginComponent,
     HomeComponent,
     ProfileComponent,
-    AccesserrorComponent
+    AccesserrorComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { AccesserrorComponent } from './components/accesserror/accesserror.compo
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
