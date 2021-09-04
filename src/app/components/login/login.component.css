@@ -23,14 +23,14 @@
   cursor: pointer;
 }
 
-.login {
+.login1 {
   height: 100%;
     background-image: url("../../../assets/images/bg12.png");
   justify-content: center;
   padding-top: 133px;
 }
 
-.login .login_entry {
+.login1 .login_entry {
   width: 1148px;
   height: 672px;
   flex-direction: column;
@@ -40,7 +40,7 @@
   border-radius: 30px;
 }
 
-.login .login_entry .logo_title {
+.login1 .login_entry .logo_title {
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -48,7 +48,7 @@
   color: white;
 }
 
-.login .login_entry .login_input {
+.login1 .login_entry .login_input {
   width: 615px;
   height: 60px;
   background: #F0F0F0;
@@ -62,11 +62,11 @@
   margin-top: 23px;
 }
 
-#login {
+#login1 {
   margin-top: 53px;
 }
 
-.login .login_entry .login_button {
+.login1 .login_entry .login_button {
   width: 615px;
   height: 60px;
   background: #E85714;
