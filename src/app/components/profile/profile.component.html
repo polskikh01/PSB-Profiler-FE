@@ -1,5 +1,9 @@
+<!-- <header class="flex header_landing" id="head">
+    <h1 class="header_logo">ПСБ-Профайлер</h1>
+  </header> -->
+
 <div id="header">
-    <h2><a href="/">ПСБ-Профайлер</a></h2>
+    <h2><a href="/" class="header_a">ПСБ-Профайлер</a></h2>
     <div id="bio"><h2><a href="/profile/{{authUser.id}}">{{authUser.login}}</a> | <a style="display:{{isAuth ? 'unset' : 'none'}}" id="logout" href="#" (click)="logout()">Logout</a></h2></div>
 </div>
 <div id="content">
@@ -7,7 +11,11 @@
         <h2>Профиль</h2>
         <div id="secs">
             <div class="sections" id="section3">
-                <!---->
+                <div id="filesTable">
+                    <table id="catalogsAndFiles" border="1">
+                        
+                    </table>
+                </div>
             </div>
         </div>
     </div>
