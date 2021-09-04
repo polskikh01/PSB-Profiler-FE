@@ -1,23 +1,36 @@
 <html>
 <body>
-    <div id="content">
-        <div id="container">
-        <h2>Авторизация</h2>
-        <form (ngSubmit)="auth()" method="POST">
-            <div class="form-group">
-                <label for="email">Почта: </label>
-                <input type="text" name="email" id="email" formControlName="email" class="form-control" required />
-            </div>
-            <div class="form-group">
-                <label for="password">Пароль: </label>
-                <input type="password" name="password" id="password" formControlName="password" class="form-control" required />
-            </div>
-            {{errorMessage}}
-            <div class="form-group">
-                <input value="Login" type="submit">
-            </div>
-        </form>
+<!--    <div id="content">-->
+<!--        <div id="container">-->
+<!--        <h2>Авторизация</h2>-->
+<!--        <form (ngSubmit)="auth()" method="POST">-->
+<!--            <div class="form-group">-->
+<!--                <label for="email">Почта: </label>-->
+<!--                <input type="text" name="email" id="email" formControlName="email" class="form-control" required />-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="password">Пароль: </label>-->
+<!--                <input type="password" name="password" id="password" formControlName="password" class="form-control" required />-->
+<!--            </div>-->
+<!--            {{errorMessage}}-->
+<!--            <div class="form-group">-->
+<!--                <input value="Login" type="submit">-->
+<!--            </div>-->
+<!--        </form>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="wrapper">
+      <header class="flex header">
+        <button class="header_logo" onclick="location.href = '/'">ПСБ-Профайлер</button>
+      </header>
+      <form class="flex login">
+        <div class="flex center login_entry">
+          <h2 class="flex logo_title">Вход</h2>
+          <input class="flex login_input" id="first" placeholder="Email">
+          <input class="flex login_input" placeholder="Пароль">
+          <button class="flex center login_button">Войти</button>
         </div>
+      </form>
     </div>
 </body>
 </html>
