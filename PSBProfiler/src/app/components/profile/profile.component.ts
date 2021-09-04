@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {Role} from 'src/app/models/role';
 import {User} from 'src/app/models/user';
@@ -21,9 +23,12 @@ export class ProfileComponent implements OnInit {
   public isImage = false;
   public fileToUpload!: string;
 
+  uploadForm!: FormGroup;
+  SERVER_URL = "http://localhost:8080/uploadFile";
+
   //private error = "";
 
-  constructor(private route: ActivatedRoute, private authService: AuthService, private userService: UserService, private storageService: StorageService) {
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient,private route: ActivatedRoute, private authService: AuthService, private userService: UserService, private storageService: StorageService) {
   }
 
   /* Загрузка фото профиля */
@@ -37,24 +42,34 @@ export class ProfileComponent implements OnInit {
       });
   }
 
-  /* Уведомления */
-  handleNotification() {
-    //alert("!");
+  onSubmit() {
+    //const formData = new FormData();
+    //formData.append('file', this.uploadForm.get('profile')?.value);
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Mode' : ''
+    });
+    let options = { headers: headers };
+
+    this.httpClient.post<any>(this.SERVER_URL, "file:"+JSON.parse("{\"key\": \"value\"}"), options).subscribe(
+      (res) => console.log(res),
+      (err) => console.log(err)
+    );
+/*
+    this.httpClient.post<any>(this.SERVER_URL, formData).subscribe(
+      (res) => console.log(res),
+      (err) => console.log(err)
+    );*/
   }
-
-  /* Валидация фото профиля */
-  handleFileInput(event?: Event) {
-    this.fileToUpload = (<HTMLInputElement>event?.target).value;
-
-    const img = new Image();
-    img.onload = () => {
-      this.uploadFileToActivity();
-      document.getElementById("AddImage")!.style.border = "2px solid green";
+  
+  onFileSelect(event?: Event) {
+    if(event != null && event.target != null){
+      if ((<HTMLInputElement>event.target).files!.length > 0) {
+        const file = (<HTMLInputElement>event.target).files![0];
+        this.uploadForm.get('profile')?.setValue(file);
+      }
     }
-    img.onerror = () => {
-      document.getElementById("AddImage")!.style.border = "2px solid red";
-    }
-    img.src = this.fileToUpload;
   }
 
   ngOnInit(): void {
@@ -78,6 +93,10 @@ export class ProfileComponent implements OnInit {
         this.currentUser = true;
       }
     }
+
+    this.uploadForm = this.formBuilder.group({
+      profile: ['']
+    });
   }
 
   logout(): void {

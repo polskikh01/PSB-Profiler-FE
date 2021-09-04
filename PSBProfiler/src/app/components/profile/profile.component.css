@@ -112,7 +112,7 @@
 }
 
 input[type="file"] {
-    display: none;
+    /*display: none;*/
 }
 .customFileUpload {
     border: 1px solid #ccc;
