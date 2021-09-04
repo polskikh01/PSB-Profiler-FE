@@ -1,31 +1,50 @@
 #header {
-    background: #485a5f;
+    background-color: #51516C;
+    height: 72px;
+    align-items: center;
     width: 100%;
-    height: 70px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
-#header h2{
+#header h2 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
     color: white;
-    margin: 0;
     margin-inline: 20px;
 }
 
-#header h2 a{
+.header_a {
     color: white;
     text-decoration: none;
+    margin-left: 154px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
 }
 
-#header h2 a:hover{
+/* #header h2 a{
+    color: white;
+    text-decoration: none;
+    margin-left: 154px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+} */
+
+/* #header h2 a:hover{
     color: #172429;
 }
-
+ */
 #content{
     width: 100%;
     height: 80%;
-    margin-top: 40px;
+    background-color: #253236;
+    padding-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +60,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#profile h2 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    color: white;
 }
 
 .sections {
@@ -106,11 +133,11 @@
     color: white;
 }
 
-#logout:hover {
+/* #logout:hover {
     text-decoration: none;
     color: #172429;
 }
-
+ */
 input[type="file"] {
     /*display: none;*/
 }
@@ -156,12 +183,12 @@ hr {
     transition: .4s;
 }
 
-.export:hover {
+/* .export:hover {
     background: rgb(255 255 255);
     border: 3px solid #253236;
     color: #253236;
     transition: .4s;
-}
+} */
 
 .plus {
     width: 50px;
@@ -182,12 +209,12 @@ hr {
     transition: .4s;
 }
 
-.plus:hover {
+/* .plus:hover {
     background: rgb(255 255 255);
     border: 3px solid #253236;
     color: #253236;
     transition: .4s;
-}
+} */
 
 #photoStyle {
     object-fit: cover;
@@ -300,11 +327,11 @@ a {
     color: inherit;
 }
 
-a:hover{
+/* a:hover{
     text-decoration: none;
     color: #b4b8b9
 }
-
+ */
 #interviewList{
     width: 92%;
     height: 243px;
