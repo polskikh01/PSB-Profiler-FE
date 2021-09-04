@@ -63,7 +63,7 @@
 }
 
 #login1 {
-  margin-top: 53px;
+  margin-top: 25px;
 }
 
 .login1 .login_entry .login_button {
@@ -75,6 +75,12 @@
   font-size: 24px;
   line-height: 28px;
   color: #4C5255;
-  margin-top: 96px;
+  margin-top: 25px;
   cursor: pointer;
+}
+
+#errorDisplay {
+  margin-top: 25px;
+  color: #ff4343;
+  font-size: 20pt;
 }

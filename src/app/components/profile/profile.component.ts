@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Role} from 'src/app/models/role';
 import {User} from 'src/app/models/user';
 import {AuthService} from 'src/app/services/auth.service';
@@ -28,7 +28,13 @@ export class ProfileComponent implements OnInit {
 
   //private error = "";
 
-  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient,private route: ActivatedRoute, private authService: AuthService, private userService: UserService, private storageService: StorageService) {
+  constructor(private formBuilder: FormBuilder, 
+    private httpClient: HttpClient,
+    private route: ActivatedRoute, 
+    private authService: AuthService, 
+    private userService: UserService, 
+    private storageService: StorageService,
+    private router: Router) {
   }
 
   /* Загрузка фото профиля */
@@ -73,6 +79,13 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    if (this.storageService.getUser() != null) {
+      this.isAuth = true;
+    }else{
+      this.router.navigate(['/']).then(() => location.reload());
+    }
+
     /* Инициализация страницы пользователя */
     const id = this.route.snapshot.paramMap.get('id') || "1";
     this.userService.userPage(id).subscribe(response => {
@@ -85,9 +98,6 @@ export class ProfileComponent implements OnInit {
     this.authUser = this.storageService.getUser();
 
     /* Проверки разграничения доступа */
-    if (this.storageService.getUser() != null) {
-      this.isAuth = true;
-    }
     if (this.storageService.getUser() != null) {
       if (this.storageService.getUser().id?.toString() == id) {
         this.currentUser = true;

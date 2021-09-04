@@ -40,9 +40,9 @@ export class LoginComponent implements OnInit {
         response => {
         this.storageService.saveUser(new User(response));
         //alert(this.storageService.getUser().login);
-        this.router.navigate(['/']).then(() => location.reload());
+        this.router.navigate(['/profile/'+this.storageService.getUser().id]).then(() => location.reload());
       },
-      (error) => {
+      error => {
           this.errorMessage = error.error;
           this.errorFlag = true;
       });
