@@ -24,7 +24,7 @@ import { AccesserrorComponent } from './components/accesserror/accesserror.compo
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
