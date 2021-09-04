@@ -202,6 +202,7 @@
     font-size: 30px;
     line-height: 35px;
     color: var(--white);
+    cursor: pointer;
 }
 
 .landing_list_roster {
