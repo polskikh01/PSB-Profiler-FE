@@ -10,6 +10,9 @@
 /*    font-family: 'Nunito', sans-serif;*/
 /*}*/
 
+html, body {
+  height: 100%;
+}
 
 @font-face {
   font-family: 'Gilroy-Black';

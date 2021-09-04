@@ -40,22 +40,24 @@
     color: #172429;
 }
  */
+
+ 
 #content{
     width: 100%;
-    height: 80%;
+    padding: 5%;
     background-color: #253236;
-    padding-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #profile {
-    height: 85%;
+    height: 800px;
     border: 4px solid white;
     color: white;
     background: #ffffff30;
-    width: 85%;
+    min-width: 850px;
+    width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,16 +70,8 @@
     font-size: 30px;
     line-height: 35px;
     color: white;
-}
-
-.sections {
-    border: 2px solid white;
-    background: #ffffff30;
-    width: 30%;
-    height: 400px;
-    margin: 1%;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 10px;
+    height: 65px;
 }
 
 #secs{
@@ -86,46 +80,18 @@
     align-items: center;
     width: 100%;
     height: 87%;
-    margin-bottom: 20px;
 }
 
-#section2 h3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#section3 h3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#section4 h3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#section1 img{
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    border: 3px solid white;
-
-}
-
-#section1 {
+.section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
-}
-
-#section1 ul {
-    list-style: none;
-    padding-inline-start: 0;
+    border: 1px solid white;
+    padding: 20px;
+    margin: 10px;
+    height: 95%;
+    width: 33.3333333%;
 }
 
 #logout {
@@ -141,25 +107,9 @@
 input[type="file"] {
     /*display: none;*/
 }
-.customFileUpload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 3px 6px;
-    cursor: pointer;
-    margin-top: 20px;
-}
 
 hr {
     width: 100%;
-}
-
-#photoStyle {
-    object-fit: cover;
-}
-
-div#section4 {
-    display: flex;
-    align-items: center;
 }
 
 a {
@@ -175,9 +125,12 @@ a {
 
 table {
     color: black;
+    width: 100%;
 }
 
-
+.filesTable {
+    width: 100%;
+}
 
 /*SPINNER*/
 

@@ -103,7 +103,7 @@ export class ProfileComponent implements OnInit {
       }
     }
 
-    let mainTable = document.getElementById("catalogsAndFiles");
+    let mainTable = document.getElementById("nonProcessed");
     this.httpClient.get<string[]>('http://localhost:8080/profile/' + id).subscribe(
       response => {
         for(let i = 0; i<response.length;i++){
