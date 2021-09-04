@@ -12,34 +12,44 @@ export class ChartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    var myChart = new Chart("myChart", {
+    Chart.defaults.font.size = 20;
+    let myChart = new Chart("myChart", {
       type: 'pie',
       data: {
         labels: [
           'Red',
           'Blue',
           'Yellow',
-          'TEST123'
+          'TEST'
         ],
         datasets: [{
           label: 'My First Dataset',
           data: [300, 50, 100, 700],
+          borderWidth: 0,
           backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)',
-            'rgb(255, 0, 16)'
+            'rgb(131, 48, 83)',
+            'rgb(232, 87, 20)',
+            'rgb(20, 156, 232)',
+            'rgb(240, 240, 240)'
           ]
         }]
       },
       options: {
         plugins: {
+          title: {
+            display: true,
+            text: 'pisya',
+            position: "bottom",
+            color: '#FFFFFF',
+          },
           legend: {
             position: "right",
-
             labels: {
               padding: 50,
-              color: '#FFFFFF'
+              color: '#FFFFFF',
+              font: {
+                size: 16
+              }
             }
           },
         }
