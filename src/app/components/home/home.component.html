@@ -22,12 +22,13 @@
   <span class="flex center landing_profiler_span">ПСБ-Профайлер - веб-приложение, позволяющее распознавать документы по установленным признакам и классифицировать их в Клиентском досье.</span>
   <div class="flex center landing_icon">
     <a href="#head"><img class="landing_icon_img" src="../../../assets/images/documents-icon.png"
-                              alt="Documents icon"></a>
+                         alt="Documents icon"></a>
     <a (click)="myProfile()" class="flex center landing_cabinet">
       <img class="landing_icon_img" src="../../../assets/images/icon-user.png" alt="User icon">
       <span>Личный кабинет</span>
     </a>
-    <a href="#analitics"><img class="landing_icon_img" src="../../../assets/images/analitics-icon.png" alt="Analitics icon"></a>
+    <a href="#analitics"><img class="landing_icon_img" src="../../../assets/images/analitics-icon.png"
+                              alt="Analitics icon"></a>
   </div>
 </section>
 <section class="flex landing_benefits">
@@ -68,12 +69,9 @@
 <!--</canvas>-->
 <section class="flex chart" id="analitics">
   <app-chart></app-chart>
-<!--  <ul class="landing_benefits_ul chart_ul">-->
-<!--    <li class="list" style="list-style: none" id="chart_red">1</li>-->
-<!--    <li class="list">2</li>-->
-<!--    <li class="list">3</li>-->
-<!--  </ul>-->
+  <app-chart-display></app-chart-display>
 </section>
+
 <!--<section class="flex landing_analytics" id="analitics">-->
 <!--  <img src="../../../assets/images/diagram.png" alt="Analitics">-->
 <!--</section>-->

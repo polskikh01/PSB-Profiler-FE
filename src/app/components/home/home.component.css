@@ -130,7 +130,7 @@
   height: 550px;
   background-color: #454553;
   align-items: center;
-  padding-left: 154px;
+ justify-content: space-evenly;
 }
 
 .chart_ul {
