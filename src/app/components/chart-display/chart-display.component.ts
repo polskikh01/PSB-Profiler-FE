@@ -1,25 +1,25 @@
 import {Component, OnInit} from '@angular/core';
-import {Chart} from 'node_modules/chart.js';
+import {Chart} from "chart.js";
 
 @Component({
-  selector: 'app-chart',
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css']
+  selector: 'app-chart-display',
+  templateUrl: './chart-display.component.html',
+  styleUrls: ['./chart-display.component.css']
 })
-export class ChartComponent implements OnInit {
+export class ChartDisplayComponent implements OnInit {
 
   constructor() {
   }
 
   ngOnInit(): void {
-    var myChart = new Chart("myChart", {
+    var myChart = new Chart("myChartDisplay", {
       type: 'pie',
       data: {
         labels: [
           'Red',
           'Blue',
           'Yellow',
-          'TEST123'
+          'TEST'
         ],
         datasets: [{
           label: 'My First Dataset',
@@ -46,4 +46,5 @@ export class ChartComponent implements OnInit {
       }
     });
   }
+
 }

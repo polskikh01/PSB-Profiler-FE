@@ -12,6 +12,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AccesserrorComponent } from './components/accesserror/accesserror.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartComponent } from './components/chart/chart.component';
+import { ChartDisplayComponent } from './components/chart-display/chart-display.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ChartComponent } from './components/chart/chart.component';
     HomeComponent,
     ProfileComponent,
     AccesserrorComponent,
-    ChartComponent
+    ChartComponent,
+    ChartDisplayComponent
   ],
   imports: [
     BrowserModule,
