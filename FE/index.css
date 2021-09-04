@@ -24,7 +24,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Gilroy-Regular, sans-serif;
-    /* overflow: hidden; */
 }
 
 .flex {
@@ -186,4 +185,14 @@
 
 .landing_benefits_ul {
     padding-left: 64px;
+}
+
+.landing_cabinet {
+    flex-direction: column;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    color: var(--white);
 }
