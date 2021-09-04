@@ -38,8 +38,8 @@
 
 /*ЛОГИН*/
 .wrapper {
-    width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
 .header {
@@ -111,6 +111,7 @@
     line-height: 28px;
     color: #4C5255;
     margin-top: 96px;
+    cursor: pointer;
 }
 
 /*styles landing*/
