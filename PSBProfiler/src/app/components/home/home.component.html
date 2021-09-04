@@ -14,14 +14,14 @@
 <!--    <button style="display: {{isAuth ? 'unset' : 'none'}}" (click)="myProfile()">Мой профиль</button>-->
 <!--  </div>-->
 <!--</div>-->
-<header class="flex header_landing">
+<header class="flex header_landing" id="head">
   <h1 class="header_logo">ПСБ-Профайлер</h1>
 </header>
 <section class="flex center landing_profiler">
   <img src="../../../assets/images/logo-landing.png" alt="Logo landing">
   <span class="flex center landing_profiler_span">ПСБ-Профайлер - веб-приложение, позволяющее распознавать документы по установленным признакам и классифицировать их в Клиентском досье.</span>
   <div class="flex center landing_icon">
-    <a href="#documents"><img class="landing_icon_img" src="../../../assets/images/documents-icon.png"
+    <a href="#head"><img class="landing_icon_img" src="../../../assets/images/documents-icon.png"
                               alt="Documents icon"></a>
     <a onclick="location.href = '/login'" class="flex center landing_cabinet">
       <img class="landing_icon_img" src="../../../assets/images/icon-user.png" alt="User icon">
