@@ -79,7 +79,6 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     if (this.storageService.getUser() != null) {
       this.isAuth = true;
     }else{
@@ -104,9 +103,10 @@ export class ProfileComponent implements OnInit {
       }
     }
 
-    this.uploadForm = this.formBuilder.group({
-      profile: ['']
-    });
+    this.httpClient.get<string[]>('http://localhost:8080/profile/' + id).subscribe(
+      response => {
+        alert(response);
+      });
   }
 
   logout(): void {
