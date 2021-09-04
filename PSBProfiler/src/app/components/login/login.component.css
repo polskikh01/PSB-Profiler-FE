@@ -85,8 +85,6 @@
   --black-3: #323242;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-
 @font-face {
   font-family: 'Gilroy-Black';
   src: url('../../fonts/gilroy-black.eot'); /* IE 9 Compatibility Mode */
@@ -128,9 +126,9 @@
 
 .header {
   height: 72px;
-  padding-left: 47px;
+  padding-left: 154px;
   align-items: center;
-  background-color: var(--black-3);
+  background-color: #51516C;
 }
 
 .header .header_logo {
@@ -148,7 +146,7 @@
 
 .login {
   height: 100%;
-  background-image: url("../../../assets/bg12.png");
+    background-image: url("../../../assets/images/bg12.png");
   justify-content: center;
   padding-top: 133px;
 }
@@ -168,7 +166,7 @@
   font-weight: normal;
   font-size: 30px;
   line-height: 35px;
-  color: var(--white);
+  color: white;
 }
 
 .login .login_entry .login_input {
