@@ -103,9 +103,16 @@ export class ProfileComponent implements OnInit {
       }
     }
 
+    let mainTable = document.getElementById("catalogsAndFiles");
     this.httpClient.get<string[]>('http://localhost:8080/profile/' + id).subscribe(
       response => {
-        alert(response);
+        for(let i = 0; i<response.length;i++){
+          let tr = document.createElement('tr');
+          let td = document.createElement('td');
+          td.innerHTML = response[i];
+          tr.appendChild(td);
+          mainTable?.appendChild(tr);
+        }
       });
   }
 
