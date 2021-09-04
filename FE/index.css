@@ -2,6 +2,8 @@
     --white: #FFFFFF;
     --black-2: #51516C;
     --black-3: #323242;
+    --gray-2: #454553;
+    --gray-1: #4A4A4A;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
@@ -24,6 +26,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Gilroy-Regular, sans-serif;
+    scroll-behavior: smooth;
 }
 
 .flex {
@@ -43,9 +46,9 @@
 
 .header {
     height: 72px;
-    padding-left: 47px;
+    padding-left: 154px;
     align-items: center;
-    background-color: var(--black-3);
+    background-color: var(--black-2);
 }
 
 .header .header_logo {
@@ -55,6 +58,7 @@
     line-height: 35px;
     text-transform: capitalize;
     color: var(--white);
+    text-decoration: none;
 }
 
 .login {
@@ -161,10 +165,12 @@
 }
 
 .landing_benefits {
-    width: 1740px;
+    width: 100%;
     height: 512px;
     flex-direction: column;
+    padding-left: 124px;
     justify-content: center;
+    background-color: var(--black-3);
 }
 
 .landing_benefits_text {
@@ -196,4 +202,44 @@
     font-size: 30px;
     line-height: 35px;
     color: var(--white);
+}
+
+.landing_list_roster {
+    background-color: var(--gray-2);
+    justify-content: space-around;
+}
+
+.landing_list_document {
+    justify-content: center;
+    flex-direction: column;
+    height: 725px;
+}
+
+.landing_list_document span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    color: var(--white);
+    margin-bottom: 73px;
+}
+
+.landing_list_document_ul {
+    flex-direction: column;
+}
+
+.landing_list_document_li {
+    width: 680px;
+    height: 55px;
+    background: rgba(240, 240, 240, 0.8);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    margin-bottom: 35px;
+    font-size: 20px;
+    color: var(--gray-1);
+}
+
+.landing_analytics {
+    flex-direction: row;
+    background-color: var(--black-3);
 }
