@@ -1,0 +1,18 @@
+<html>
+<body>
+<div id="content">
+  <a style="display: {{isAuth ? 'unset' : 'none'}}" id="logout" href="#" (click)="logout()"><h3>Logout</h3></a>
+  <div id="leftBlock">
+    <h1>ПСБ-Профайлер</h1>
+    <hr>
+    <p>ПСБ-Профайлер - веб-приложение, позволяющее распознавать документы по установленным признакам и классифицировать
+      их в Клиентском досье. </p>
+  </div>
+  <div id="rightBlock">
+    <button style="display: {{isAuth ? 'none' : 'unset'}}" onclick="location.href = '/login'">Авторизоваться</button>
+    <button style="display: {{isAuth ? 'none' : 'unset'}}" onclick="location.href = '/registration'">-----</button>
+    <button style="display: {{isAuth ? 'unset' : 'none'}}" (click)="myProfile()">Мой профиль</button>
+  </div>
+</div>
+</body>
+</html>
