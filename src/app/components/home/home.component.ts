@@ -26,6 +26,10 @@ export class HomeComponent implements OnInit {
   }
 
   myProfile(): void {
-    document.location.href = '/profile/'+this.currentId;
+    if(this.storageService.getUser() != null){
+      document.location.href = '/profile/'+this.currentId;
+    }else{
+      document.location.href = '/login';
+    }
   }
 }
