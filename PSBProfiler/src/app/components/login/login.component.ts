@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         response => {
         this.storageService.saveUser(new User(response));
-        //alert(this.storageService.getUser().role);
+        //alert(this.storageService.getUser().login);
         this.router.navigate(['/']).then(() => location.reload());
       },
       (error) => {

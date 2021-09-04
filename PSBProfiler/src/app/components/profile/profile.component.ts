@@ -17,7 +17,6 @@ export class ProfileComponent implements OnInit {
   authUser: User = {} as User;
   public isAuth = false;
   public isAdmin = false;
-  public inter = "";
   public currentUser = false;
   public isImage = false;
   public fileToUpload!: string;
@@ -73,14 +72,6 @@ export class ProfileComponent implements OnInit {
     /* Проверки разграничения доступа */
     if (this.storageService.getUser() != null) {
       this.isAuth = true;
-    }
-    if (this.storageService.getUser() != null) {
-      if ((this.storageService.getUser().role?.toString()) == Role[0].toString()) {
-        this.isAdmin = true;
-        this.inter = "Interviewer";
-      } else {
-        this.inter = "Interviewee";
-      }
     }
     if (this.storageService.getUser() != null) {
       if (this.storageService.getUser().id?.toString() == id) {
