@@ -23,7 +23,7 @@
       <header class="flex header">
         <button class="header_logo" onclick="location.href = '/'">ПСБ-Профайлер</button>
       </header>
-      <form class="flex login">
+      <form [formGroup]="formLogin" class="flex login">
         <div class="flex center login_entry">
           <h2 class="flex logo_title">Вход</h2>
           <input type="text" class="flex login_input" name="email" id="email" formControlName="email" class="form-control" placeholder="Login" required>
