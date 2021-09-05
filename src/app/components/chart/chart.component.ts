@@ -17,14 +17,14 @@ export class ChartComponent implements OnInit {
       type: 'pie',
       data: {
         labels: [
-          'Red',
-          'Blue',
-          'Yellow',
-          'TEST'
+          'DPF',
+          'XLSX',
+          'DOCX',
+          'PNG'
         ],
         datasets: [{
           label: 'My First Dataset',
-          data: [300, 50, 100, 700],
+          data: [73, 11, 9, 7],
           borderWidth: 0,
           backgroundColor: [
             'rgb(131, 48, 83)',
@@ -38,7 +38,7 @@ export class ChartComponent implements OnInit {
         plugins: {
           title: {
             display: true,
-            text: 'pisya',
+            text: 'Типы обрабатываемых документов',
             position: "bottom",
             color: '#FFFFFF',
           },

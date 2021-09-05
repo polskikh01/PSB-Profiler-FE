@@ -17,14 +17,14 @@ export class ChartDisplayComponent implements OnInit {
       type: 'pie',
       data: {
         labels: [
-          'Red',
-          'Blue',
-          'Yellow',
-          'TEST'
+          '< 30сек',
+          '30сек < 60сек',
+          '60сек < 90сек',
+          '90сек<120сек'
         ],
         datasets: [{
           label: 'My First Dataset',
-          data: [300, 50, 100, 700],
+          data: [78, 12, 7, 3],
           borderWidth: 0,
           backgroundColor: [
             'rgb(20, 156, 232)',
@@ -38,7 +38,7 @@ export class ChartDisplayComponent implements OnInit {
         plugins: {
           title: {
             display: true,
-            text: 'pisya2.0',
+            text: 'Среднее время обработки документа',
             position: "bottom",
             color: '#FFFFFF',
           },
