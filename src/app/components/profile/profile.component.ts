@@ -129,10 +129,12 @@ export class ProfileComponent implements OnInit {
 
   //начало обработки документов
   startProcessing(): void {
+    let processedButton = document.getElementById("processedButton");
+    processedButton!.style.display = 'none';
+    
     this.httpClient.post<any>('http://localhost:8080/startProcessing', "ez").subscribe(
       response => {
-        let processedButton = document.getElementById("processedButton");
-        processedButton!.style.display = 'none';
+        
       }
     );
   }
