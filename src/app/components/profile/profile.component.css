@@ -117,6 +117,10 @@ a {
     color: inherit;
 }
 
+.nonItem {
+    width: 32px;
+}
+
 /* a:hover{
     text-decoration: none;
     color: #b4b8b9
@@ -130,6 +134,33 @@ table {
 
 .filesTable {
     width: 100%;
+}
+
+/* TOOLTIP */
+
+.tooltip {
+	border-bottom: 1px dotted #0077AA;
+	cursor: help;
+}
+
+.tooltip::after {
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 8px 8px 8px 0px;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	content: attr(data-tooltip);
+	margin-top: -24px;
+	opacity: 0; 
+	padding: 3px 7px;
+	position: absolute;
+	visibility: hidden; 
+			
+	transition: all 0.4s ease-in-out;
+}
+		
+.tooltip:hover::after {
+	opacity: 1;
+	visibility: visible;
 }
 
 /*SPINNER*/

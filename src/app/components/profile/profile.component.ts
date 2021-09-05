@@ -108,9 +108,14 @@ export class ProfileComponent implements OnInit {
       response => {
         for(let i = 0; i<response.length;i++){
           let tr = document.createElement('tr');
-          let td = document.createElement('td');
-          td.innerHTML = response[i];
-          tr.appendChild(td);
+          let td1 = document.createElement('td');
+          td1.innerHTML = response[i];
+          let td2 = document.createElement('td');
+          td2.style.display = "flex";
+          td2.style.justifyContent = "center";
+          td2.innerHTML = "<span class='tooltip' data-tooltip='Данные требуют программной обработки'><img class='nonItem' src='/assets/images/close.png' alt='НЕОБР'></span>";
+          tr.appendChild(td1);
+          tr.appendChild(td2);
           mainTable?.appendChild(tr);
         }
       });
