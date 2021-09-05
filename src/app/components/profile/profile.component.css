@@ -171,7 +171,6 @@ td {
 /* TOOLTIP */
 
 .tooltip {
-	border-bottom: 1px dotted #0077AA;
 	cursor: help;
 }
 
