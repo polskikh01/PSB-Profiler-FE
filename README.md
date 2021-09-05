@@ -52,4 +52,4 @@
   * ОЗУ: 4 Gb+
   * Видеокарта: Shader model 3.0 capable card
   * DirectX: version 11+
-  * Место на диске: ...
+  * Место на диске: 400 МБ
