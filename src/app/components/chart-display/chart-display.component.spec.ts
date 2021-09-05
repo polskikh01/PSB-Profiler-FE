@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ChartDisplayComponent } from './chart-display.component';
+import {ChartDisplayComponent} from './chart-display.component';
 
 describe('ChartDisplayComponent', () => {
   let component: ChartDisplayComponent;
@@ -8,9 +8,9 @@ describe('ChartDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChartDisplayComponent ]
+      declarations: [ChartDisplayComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

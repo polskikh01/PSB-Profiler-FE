@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Role} from 'src/app/models/role';
 import {User} from 'src/app/models/user';
@@ -28,13 +28,13 @@ export class ProfileComponent implements OnInit {
 
   //private error = "";
 
-  constructor(private formBuilder: FormBuilder, 
-    private httpClient: HttpClient,
-    private route: ActivatedRoute, 
-    private authService: AuthService, 
-    private userService: UserService, 
-    private storageService: StorageService,
-    private router: Router) {
+  constructor(private formBuilder: FormBuilder,
+              private httpClient: HttpClient,
+              private route: ActivatedRoute,
+              private authService: AuthService,
+              private userService: UserService,
+              private storageService: StorageService,
+              private router: Router) {
   }
 
   /* Загрузка фото профиля */
@@ -54,23 +54,23 @@ export class ProfileComponent implements OnInit {
 
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Mode' : ''
+      'Mode': ''
     });
-    let options = { headers: headers };
+    let options = {headers: headers};
 
-    this.httpClient.post<any>(this.SERVER_URL, "file:"+JSON.parse("{\"key\": \"value\"}"), options).subscribe(
+    this.httpClient.post<any>(this.SERVER_URL, "file:" + JSON.parse("{\"key\": \"value\"}"), options).subscribe(
       (res) => console.log(res),
       (err) => console.log(err)
     );
-/*
-    this.httpClient.post<any>(this.SERVER_URL, formData).subscribe(
-      (res) => console.log(res),
-      (err) => console.log(err)
-    );*/
+    /*
+        this.httpClient.post<any>(this.SERVER_URL, formData).subscribe(
+          (res) => console.log(res),
+          (err) => console.log(err)
+        );*/
   }
-  
+
   onFileSelect(event?: Event) {
-    if(event != null && event.target != null){
+    if (event != null && event.target != null) {
       if ((<HTMLInputElement>event.target).files!.length > 0) {
         const file = (<HTMLInputElement>event.target).files![0];
         this.uploadForm.get('profile')?.setValue(file);
@@ -81,7 +81,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     if (this.storageService.getUser() != null) {
       this.isAuth = true;
-    }else{
+    } else {
       this.router.navigate(['/']).then(() => location.reload());
     }
 
@@ -106,7 +106,7 @@ export class ProfileComponent implements OnInit {
     let mainTable = document.getElementById("catalogsAndFiles");
     this.httpClient.get<string[]>('http://localhost:8080/profile/' + id).subscribe(
       response => {
-        for(let i = 0; i<response.length;i++){
+        for (let i = 0; i < response.length; i++) {
           let tr = document.createElement('tr');
           let td = document.createElement('td');
           td.innerHTML = response[i];
