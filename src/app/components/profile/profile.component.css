@@ -126,6 +126,14 @@ a {
     width: 32px;
 }
 
+.okItem {
+  width: 32px;
+}
+
+.nonValItem {
+  width: 32px;
+}
+
 /* a:hover{
     text-decoration: none;
     color: #b4b8b9
