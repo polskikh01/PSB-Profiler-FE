@@ -8,15 +8,42 @@
 </div>
 <div id="content">
     <div id="profile">
-        <h2>Профиль</h2>
+        <h2>Корневой каталог</h2>
+        <hr>
         <div id="secs">
-            <div class="sections" id="section3">
-                <div id="filesTable">
-                    <table id="catalogsAndFiles" border="1">
-                        
+            <div class="sections" class="section">
+                <h3>Необработанные документы</h3>
+                <div class="filesTable">
+                    <table id="nonProcessed" border="1">
+                        <tr><td>Название документа</td><td>Статус</td></tr>
+                    </table>
+                </div>
+                <button (click)="startProcessing()" id="processedButton" class="process_button">Обработать</button>
+            </div>
+
+            <div class="sections" class="section">
+                <h3>Обработанные документы</h3>
+                <div class="filesTable">
+                    <table id="okProcessed" border="1">
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="sections" class="section">
+                <h3>Невалидные документы</h3>
+                <div class="filesTable">
+                    <table id="nonValid" border="1">
+
                     </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!--
+<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+  <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+</svg>
+-->

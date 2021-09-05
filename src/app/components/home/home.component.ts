@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { StorageService } from 'src/app/services/storage.service';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from 'src/app/services/auth.service';
+import {StorageService} from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -12,10 +12,11 @@ export class HomeComponent implements OnInit {
   public isAuth = false;
   public currentId = 1;
 
-  constructor(private storageService: StorageService,private authService: AuthService) { }
+  constructor(private storageService: StorageService, private authService: AuthService) {
+  }
 
   ngOnInit(): void {
-    if(this.storageService.getUser() != null){
+    if (this.storageService.getUser() != null) {
       this.isAuth = true;
       this.currentId = this.storageService.getUser().id as number;
     }
@@ -26,9 +27,9 @@ export class HomeComponent implements OnInit {
   }
 
   myProfile(): void {
-    if(this.storageService.getUser() != null){
-      document.location.href = '/profile/'+this.currentId;
-    }else{
+    if (this.storageService.getUser() != null) {
+      document.location.href = '/profile/' + this.currentId;
+    } else {
       document.location.href = '/login';
     }
   }

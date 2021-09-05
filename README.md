@@ -1,27 +1,55 @@
-# Interscore
+# SaratovSecurity
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+## ПСБ-Профайлер
 
-## Development server
+1. Описание приложения
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+   ПСБ-Профайлер - веб-приложение, позволяющее распознавать документы по установленным признакам и классифицировать их в Клиентском досье.
 
-## Code scaffolding
+2. Инструкция по запуску и сборке проекта
+   Этот проект сгенерирован с помощью [Angular CLI](https://github.com/angular/angular-cli) версия 12.2.0.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   * Сервер разработки 
+   
+   Запустите `ng serve` для сервера разработки. Перейдите по адресу http: // localhost: 4200 /. Приложение автоматически перезагрузится, если вы измените какой-либо из исходных файлов.
+   
+   * Построение кода
+   
+   Запустите `ng generate component имя-компонента`, чтобы сгенерировать новый компонент. Вы также можете использовать директиву ng generate | pipe | service | class | guard | interface | enum | module.
+   
+   * Сборка
+   
+   Запустите `ng build`, чтобы собрать проект. Артефакты сборки будут храниться в каталоге dist /.
+   
+   * Запуск unit-тестов
+   
+   Запустите `ng test`, чтобы выполнить модульные тесты через [Karma](https://karma-runner.github.io).
+   
+   * Запуск end-to-end тестов
+   
+    Запустите `ng e2e`, чтобы выполнить сквозные тесты через платформу по вашему выбору. Чтобы использовать эту команду, вам нужно сначала добавить пакет, реализующий возможности сквозного тестирования.
+   
+   * Дальнейшая помощь
+   
+   Чтобы получить дополнительную помощь по Angular CLI, используйте `ng help` или посетите страницу [Angular CLI Overview and Command Reference](https://angular.io/cli).
 
-## Build
+3. Руководство пользователя
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    1.Авторизуйтесь на сайте под своим логином и паролем. Данные авторизации можно получить у администратора сайта.
+    
+    2.Перейдите в личный кабинет.
 
-## Running unit tests
+    3.При наличии необработанных документов нажмите на кнопку "обработать".
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    4.Вы можете следить за прогрессом обработки: когда обработка закончится - вы увидите результат и аналитику.
 
-## Running end-to-end tests
+    5.Документы могут иметь 4 статуса-состояния: красный крестик - документы, требующие программной обработки, желтый вопросительный знак - документы, требующие ручной проверки, зеленая галочка - обработанные документы, иконка загрузки - документы, находящиеся в процессе обработки.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Минимальные системные требования
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  * ОС: windows 10+
+  * Процессор: 2.0Ghz+
+  * ОЗУ: 4 Gb+
+  * Видеокарта: Shader model 3.0 capable card
+  * DirectX: version 11+
+  * Место на диске: ...
