@@ -85,7 +85,7 @@ export class ProfileComponent implements OnInit {
           let td2 = document.createElement('td');
           td2.style.display = "flex";
           td2.style.justifyContent = "center";
-          td2.innerHTML = "<span class='tooltip' data-tooltip='Данные требуют программной обработки'><img class='nonItem' src='/assets/images/close.png' alt='НЕОБР'></span>";
+          td2.innerHTML = "<span class='tooltip tooltipspec' data-tooltip='Данные требуют программной обработки'><img class='nonItem' src='/assets/images/close.png' alt='НЕОБР'></span>";
           tr.appendChild(td1);
           tr.appendChild(td2);
           mainTable1?.appendChild(tr);
@@ -102,7 +102,7 @@ export class ProfileComponent implements OnInit {
           let td2 = document.createElement('td');
           td2.style.display = "flex";
           td2.style.justifyContent = "center";
-          td2.innerHTML = "<span class='tooltip' data-tooltip='Данные требуют программной обработки'><img class='nonItem' src='/assets/images/close.png' alt='НЕОБР'></span>";
+          td2.innerHTML = "<span class='tooltip' data-tooltip='Данные требуют программной обработки'><img class='okItem' src='/assets/images/close.png' alt='НЕОБР'></span>";
           tr.appendChild(td1);
           tr.appendChild(td2);
           mainTable2?.appendChild(tr);
@@ -119,7 +119,7 @@ export class ProfileComponent implements OnInit {
           let td2 = document.createElement('td');
           td2.style.display = "flex";
           td2.style.justifyContent = "center";
-          td2.innerHTML = "<span class='tooltip' data-tooltip='Данные требуют ручной проверки'><img class='nonItem' src='/assets/images/quest.png' alt='НЕВАЛИД'></span>";
+          td2.innerHTML = "<span class='tooltip' data-tooltip='Данные требуют ручной проверки'><img class='nonValItem' src='/assets/images/quest.png' alt='НЕВАЛИД'></span>";
           tr.appendChild(td1);
           tr.appendChild(td2);
           mainTable3?.appendChild(tr);
@@ -132,6 +132,14 @@ export class ProfileComponent implements OnInit {
     let processedButton = document.getElementById("processedButton");
     processedButton!.style.display = 'none';
     
+    let items = document.getElementsByClassName("nonItem");
+    let itemsSpans = document.getElementsByClassName("tooltipspec");
+
+    for(let i=0;i<items.length;i++){
+      (<HTMLImageElement>items[i]).style.display = "none";
+      itemsSpans[i].innerHTML += "<svg class=\"spinner\" width=\"32px\" height=\"32px\" viewBox=\"0 0 66 66\" xmlns=\"http://www.w3.org/2000/svg\"><circle class=\"path\" fill=\"none\" stroke-width=\"6\" stroke-linecap=\"round\" cx=\"33\" cy=\"33\" r=\"30\"></circle></svg>";
+    }
+
     this.httpClient.post<any>('http://localhost:8080/startProcessing', "ez").subscribe(
       response => {
         
