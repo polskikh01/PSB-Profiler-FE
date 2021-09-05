@@ -20,8 +20,6 @@ export class ProfileComponent implements OnInit {
   public isAuth = false;
   public isAdmin = false;
   public currentUser = false;
-  public isImage = false;
-  public fileToUpload!: string;
 
   uploadForm!: FormGroup;
   SERVER_URL = "http://localhost:8080/uploadFile";
@@ -37,21 +35,7 @@ export class ProfileComponent implements OnInit {
     private router: Router) {
   }
 
-  /* Загрузка фото профиля */
-  uploadFileToActivity() {
-    this.userService.postFile(this.fileToUpload, this.storageService.getUser().id as number).subscribe(
-      response => {
-
-      }, error => {
-        console.log(error);
-        window.location.reload();
-      });
-  }
-
   onSubmit() {
-    //const formData = new FormData();
-    //formData.append('file', this.uploadForm.get('profile')?.value);
-
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Mode' : ''
@@ -62,21 +46,9 @@ export class ProfileComponent implements OnInit {
       (res) => console.log(res),
       (err) => console.log(err)
     );
-/*
-    this.httpClient.post<any>(this.SERVER_URL, formData).subscribe(
-      (res) => console.log(res),
-      (err) => console.log(err)
-    );*/
   }
   
-  onFileSelect(event?: Event) {
-    if(event != null && event.target != null){
-      if ((<HTMLInputElement>event.target).files!.length > 0) {
-        const file = (<HTMLInputElement>event.target).files![0];
-        this.uploadForm.get('profile')?.setValue(file);
-      }
-    }
-  }
+
 
   ngOnInit(): void {
     if (this.storageService.getUser() != null) {
@@ -103,8 +75,8 @@ export class ProfileComponent implements OnInit {
       }
     }
 
-    let mainTable = document.getElementById("nonProcessed");
-    this.httpClient.get<string[]>('http://localhost:8080/profile/' + id).subscribe(
+    let mainTable1 = document.getElementById("nonProcessed");
+    this.httpClient.get<string[]>('http://localhost:8080/nonProcessed').subscribe(
       response => {
         for(let i = 0; i<response.length;i++){
           let tr = document.createElement('tr');
@@ -116,11 +88,56 @@ export class ProfileComponent implements OnInit {
           td2.innerHTML = "<span class='tooltip' data-tooltip='Данные требуют программной обработки'><img class='nonItem' src='/assets/images/close.png' alt='НЕОБР'></span>";
           tr.appendChild(td1);
           tr.appendChild(td2);
-          mainTable?.appendChild(tr);
+          mainTable1?.appendChild(tr);
+        }
+      });
+
+    let mainTable2 = document.getElementById("okProcessed");
+    this.httpClient.get<string[]>('http://localhost:8080/processed').subscribe(
+      response => {
+        for(let i = 0; i<response.length;i++){
+          let tr = document.createElement('tr');
+          let td1 = document.createElement('td');
+          td1.innerHTML = response[i];
+          let td2 = document.createElement('td');
+          td2.style.display = "flex";
+          td2.style.justifyContent = "center";
+          td2.innerHTML = "<span class='tooltip' data-tooltip='Данные требуют программной обработки'><img class='nonItem' src='/assets/images/close.png' alt='НЕОБР'></span>";
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+          mainTable2?.appendChild(tr);
+        }
+      });
+
+    let mainTable3 = document.getElementById("nonValid");
+    this.httpClient.get<string[]>('http://localhost:8080/nonValid').subscribe(
+      response => {
+        for(let i = 0; i<response.length;i++){
+          let tr = document.createElement('tr');
+          let td1 = document.createElement('td');
+          td1.innerHTML = response[i];
+          let td2 = document.createElement('td');
+          td2.style.display = "flex";
+          td2.style.justifyContent = "center";
+          td2.innerHTML = "<span class='tooltip' data-tooltip='Данные требуют ручной проверки'><img class='nonItem' src='/assets/images/quest.png' alt='НЕВАЛИД'></span>";
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+          mainTable3?.appendChild(tr);
         }
       });
   }
 
+  //начало обработки документов
+  startProcessing(): void {
+    this.httpClient.post<any>('http://localhost:8080/startProcessing', "ez").subscribe(
+      response => {
+        let processedButton = document.getElementById("processedButton");
+        processedButton!.style.display = 'none';
+      }
+    );
+  }
+  
+  //деавторизация
   logout(): void {
     this.authService.logout();
   }

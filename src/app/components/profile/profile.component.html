@@ -12,16 +12,17 @@
         <hr>
         <div id="secs">
             <div class="sections" class="section">
-                <h2>Необработанные документы</h2>
+                <h3>Необработанные документы</h3>
                 <div class="filesTable">
                     <table id="nonProcessed" border="1">
                         <tr><td>Название документа</td><td>Статус</td></tr>
                     </table>
                 </div>
+                <button (click)="startProcessing()" id="processedButton" class="process_button">Обработать</button>
             </div>
 
             <div class="sections" class="section">
-                <h2>Обработанные документы</h2>
+                <h3>Обработанные документы</h3>
                 <div class="filesTable">
                     <table id="okProcessed" border="1">
 
@@ -30,7 +31,7 @@
             </div>
 
             <div class="sections" class="section">
-                <h2>Невалидные документы</h2>
+                <h3>Невалидные документы</h3>
                 <div class="filesTable">
                     <table id="nonValid" border="1">
 
