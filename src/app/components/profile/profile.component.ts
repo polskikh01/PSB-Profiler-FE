@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Role} from 'src/app/models/role';
 import {User} from 'src/app/models/user';
@@ -26,34 +26,34 @@ export class ProfileComponent implements OnInit {
 
   //private error = "";
 
-  constructor(private formBuilder: FormBuilder, 
-    private httpClient: HttpClient,
-    private route: ActivatedRoute, 
-    private authService: AuthService, 
-    private userService: UserService, 
-    private storageService: StorageService,
-    private router: Router) {
+  constructor(private formBuilder: FormBuilder,
+              private httpClient: HttpClient,
+              private route: ActivatedRoute,
+              private authService: AuthService,
+              private userService: UserService,
+              private storageService: StorageService,
+              private router: Router) {
   }
 
   onSubmit() {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Mode' : ''
+      'Mode': ''
     });
-    let options = { headers: headers };
+    let options = {headers: headers};
 
-    this.httpClient.post<any>(this.SERVER_URL, "file:"+JSON.parse("{\"key\": \"value\"}"), options).subscribe(
+    this.httpClient.post<any>(this.SERVER_URL, "file:" + JSON.parse("{\"key\": \"value\"}"), options).subscribe(
       (res) => console.log(res),
       (err) => console.log(err)
     );
   }
-  
+
 
 
   ngOnInit(): void {
     if (this.storageService.getUser() != null) {
       this.isAuth = true;
-    }else{
+    } else {
       this.router.navigate(['/']).then(() => location.reload());
     }
 
@@ -95,7 +95,7 @@ export class ProfileComponent implements OnInit {
     let mainTable2 = document.getElementById("okProcessed");
     this.httpClient.get<string[]>('http://localhost:8080/processed').subscribe(
       response => {
-        for(let i = 0; i<response.length;i++){
+        for (let i = 0; i < response.length; i++) {
           let tr = document.createElement('tr');
           let td1 = document.createElement('td');
           td1.innerHTML = response[i];
@@ -138,7 +138,7 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
-  
+
   //деавторизация
   logout(): void {
     this.authService.logout();

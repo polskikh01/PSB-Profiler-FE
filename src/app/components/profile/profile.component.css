@@ -41,7 +41,7 @@
 }
  */
 
- 
+
 #content{
     width: 100%;
     padding: 5%;
@@ -109,11 +109,6 @@
     color: white;
 }
 
-/* #logout:hover {
-    text-decoration: none;
-    color: #172429;
-}
- */
 input[type="file"] {
     /*display: none;*/
 }
@@ -182,20 +177,20 @@ td {
 
 .tooltip::after {
 	background: rgba(0, 0, 0, 0.8);
-	border-radius: 8px 8px 8px 0px;
+	border-radius: 8px 8px 8px 0;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 	color: #FFF;
 	content: attr(data-tooltip);
 	margin-top: -24px;
     margin-left: -141px;
-	opacity: 0; 
+	opacity: 0;
 	padding: 3px 7px;
 	position: absolute;
-	visibility: hidden; 
-			
+	visibility: hidden;
+
 	transition: all 0.4s ease-in-out;
 }
-		
+
 .tooltip:hover::after {
 	opacity: 1;
 	visibility: visible;
